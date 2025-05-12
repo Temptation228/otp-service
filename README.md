@@ -107,17 +107,14 @@ curl -X POST http://localhost:8080/pass/validate \
 ### Действия администратора
 
 ```bash
-# Изменение параметров OTP
 curl -X PATCH http://localhost:8080/admin/config \
   -H "Content-Type: application/json" \
   -H "Authorization: Bearer ADMIN_TOKEN" \
   -d '{"length":6,"ttlSeconds":300}'
 
-# Просмотр пользователей
 curl -X GET http://localhost:8080/admin/users \
   -H "Authorization: Bearer ADMIN_TOKEN"
 
-# Удаление пользователя
 curl -X DELETE http://localhost:8080/admin/users/1 \
   -H "Authorization: Bearer ADMIN_TOKEN"
 ```
